@@ -1,6 +1,6 @@
 # WDC Products: A Multi-Dimensional Entity Matching Benchmark
 
-This repository contains the code and data download links to reproduce building the WDC Products Benchmark.
+This repository contains the code and data download links to reproduce building the WDC Products benchmark. The benchmark files are available for direct download [here](http://webdatacommons.org/largescaleproductcorpus/wdc-products/)
 
 * **Requirements**
 
