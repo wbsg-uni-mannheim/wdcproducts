@@ -38,7 +38,7 @@ def unzip_files():
     for link in DATASETS:
         file_name = link.split('/')[-1]
         # opening the zip file in READ mode
-        with ZipFile(f'../../data/{file_name}', 'r') as zip:
+        with ZipFile(f'../../{file_name}', 'r') as zip:
             # printing all the contents of the zip file
             zip.printdir()
 
