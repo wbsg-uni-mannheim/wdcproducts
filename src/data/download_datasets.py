@@ -23,7 +23,7 @@ def download_datasets():
         r = requests.get(link, stream=True)
 
         # download started
-        with open(f'../../data/{file_name}', 'wb') as f:
+        with open(f'../../{file_name}', 'wb') as f:
             for chunk in r.iter_content(chunk_size=1024 * 1024):
                 if chunk:
                     f.write(chunk)
