@@ -31,7 +31,67 @@ This repository contains the code and data download links to reproduce building 
 
     The code for running [Ditto](https://github.com/megagonlabs/ditto) and [HierGAT](https://github.com/CGCL-codes/HierGAT) is available in the respective repositories.
 	
-	Code to reproduce the word-(co)occurrence, Magellan, RoBERTa and R-SupCon experiments will be available here soon.
+    * **Preparing the data**:
+
+    To prepare the data for the experiments, run the first script below and then any of the others to prepare the data for the respective experiments. Make sure to navigate to the respective folders first.
+    
+    - *src/processing/preprocess/preprocess_wdcproducts.py*
+
+    - *src/processing/contrastive/prepare-data.py*
+    - *src/processing/process-magellan/process_to_magellan.py*
+    - *src/processing/process-wordcooc/process-to-wordcooc.py*
+    - *src/processing/process-wordocc/process-to-wordocc-multi.py*
+
+    * **Running the experiments**:
+
+        * **Magellan**:
+            Navigate to *src/models/magellan/* and run the script *run_magellan.py*
+
+        * **Word Coocurrence**:
+            Navigate to *src/models/wordcooc/* and run the script *run_wordcooc.py*
+
+        * **Word Occurrence**:
+            Navigate to *src/models/wordocc* and run the script *run_wordocc_multi.py*
+
+        * **Transformer**:
+
+            Navigate to src/contrastive/
+            
+            To fine-tune a Transformer, run any of the fine-tuning scripts, e.g. for pair-wise:
+
+            ```CUDA_VISIBLE_DEVICES="GPU_ID" bash lspc/run_finetune_baseline.sh roberta-base True 64 5e-05 wdcproducts80cc20rnd000un large```
+
+            You need to specify model, usage of gradient checkpointing, batch size, learning rate, dataset and development size as arguments here.
+
+            Analogously for fine-tuning a multi-class Transformer: 
+
+            ```CUDA_VISIBLE_DEVICES="GPU_ID" bash lspc/run_finetune_baseline_multi.sh roberta-base True 64 5e-05 wdcproductsmulti80cc20rnd000un large```
+
+        * **R-SupCon**:
+
+            Navigate to src/contrastive/
+
+            * **Contrastive Pre-training**:
+	
+                To run contrastive pre-training use e.g.
+
+                ```CUDA_VISIBLE_DEVICES="GPU_ID" bash lspc/run_pretraining.sh roberta-base True 1024 5e-05 0.07 wdcproducts80cc20rnd000un large```
+
+                You need to specify model, usage of gradient checkpointing, batch size, learning rate, temperature, dataset and development size as arguments here.
+
+            * **Cross-entropy Fine-tuning**:
+            
+                Finally, to use the pre-trained models for fine-tuning, run any of the fine-tuning scripts, e.g. for pair-wise:
+
+                ```CUDA_VISIBLE_DEVICES="GPU_ID" bash lspc/run_finetune_siamese.sh roberta-base True 1024 5e-05 0.07 frozen wdcproducts80cc20rnd000un large``` 
+
+                Analogously for fine-tuning multi-class R-SupCon: 
+
+                ```CUDA_VISIBLE_DEVICES="GPU_ID" bash lspc/run_finetune_multi.sh roberta-base True 1024 5e-05 0.07 frozen wdcproductsmulti80cc20rnd000un large```
+
+    
+    Result files can subsequently be found in the *reports* folder.
+
 
 	
 --------
