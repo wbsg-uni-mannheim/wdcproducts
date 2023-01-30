@@ -28,7 +28,9 @@ This repository contains the code and data download links to reproduce building 
     3. *notebooks/processing/benchmark2020/generate-sets-final.ipynb*
 	
 * **Experiments**
-
+	
+	You need to install the project as a package. To do this, activate the environment, navigate to the root folder of the project, and run ```pip install -e .```
+    
     The code for running [Ditto](https://github.com/megagonlabs/ditto) and [HierGAT](https://github.com/CGCL-codes/HierGAT) is available in the respective repositories.
 	
     * **Preparing the data**:
