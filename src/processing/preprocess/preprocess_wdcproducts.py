@@ -12,18 +12,7 @@ import datetime
 
 from tqdm.auto import tqdm
 
-import pandarallel
-
-from pandarallel import pandarallel
-
 from src.data import utils
-from price_conversion.utils_number import parseNumber
-from price_conversion.utils_currency_converter import CurrencyRates
-
-from decimal import Decimal
-import simplejson as json
-
-from pdb import set_trace
 
 def _cut_lspc(row):
     attributes = {'title_left': 50,
@@ -55,60 +44,23 @@ def _cut_lspc_multi(row):
             continue
     return row
 
-def tryConvertFloat(value):
-    if value.find('[eE]'):
-        try:
-            return format(float(value))
-        except (ValueError, TypeError):
-            pass
-    return value
-
 def clean_price(price_input):
-    price_input = price_input.replace(' ', '', regex=True)
-    # only take first number, maybe we can refine it at some point
-    price_input = price_input.str.extract(r'(\d+([,.E]\d+)*)')[0]
     price_input = price_input.fillna('')
-    price_input = price_input.apply(lambda x: tryConvertFloat(x))
-    price_input = price_input.apply(lambda x: parseNumber(x))
-    price_input = price_input.apply(lambda x: "{:.2f}".format(x))
     price_input = price_input.replace('nan', '')
-    price_input = price_input.replace('0.00', '')
+    price_input = price_input.str.strip()
     return price_input
-
-def clean_currency(currency_input):
-    currency_input.replace({'Kč': 'CZK', 'Kn': 'HRK', 'eur': 'EUR', 'Euro': 'EUR', 'czk': 'CZK'}, inplace=True)
-    currency_input.replace(to_replace=r'[0-9]', value='', regex=True, inplace=True)
-    currency_input.replace(to_replace=r'\s+', value='', regex=True, inplace=True)
-    return currency_input
 
 def update_price_currency(row):
     row_price = row[0]
     row_currency = row[1]
     price = ""
     currency = ""
-    if row_price != "" and row_currency != "":
-        if row_currency == 'EUR':
-            price = row_price
-            currency = row_currency
-        elif row_currency == 'AED':
-            price = "{:.2f}".format((float(row_price) * 0.2255))
-            currency = 'EUR'
-        else:
-            try:
-                price = "{:.2f}".format(c.convert(str(row_currency), 'EUR', Decimal(row_price), date_obj))
-                currency = 'EUR'
-            except json.errors.JSONDecodeError:
-                price = row_price
-                currency = row_currency
-    elif row_price != "":
-        return row_price, currency
-    return price, currency
+    if row_price == "":
+        return price, currency
+    else:
+        return row_price, row_currency
 
 if __name__ == '__main__':
-
-    c = CurrencyRates()
-    date_obj = datetime.datetime(2020, 6, 1, 18, 36, 28, 151012)
-    pandarallel.initialize()
 
     # preprocess training sets and gold standards
     print('BUILDING PREPROCESSED TRAINING SETS AND GOLD STANDARDS...')
@@ -131,12 +83,10 @@ if __name__ == '__main__':
             df['priceCurrency_right'] = df['priceCurrency_right'].apply(utils.clean_string_2020)
             
             df['price_left'] = clean_price(df['price_left'])
-            df['priceCurrency_left'] = clean_currency(df['priceCurrency_left'])
-            df[['price_left', 'priceCurrency_left']] = df[['price_left', 'priceCurrency_left']].parallel_apply(update_price_currency, axis=1, result_type="expand")
+            df[['price_left', 'priceCurrency_left']] = df[['price_left', 'priceCurrency_left']].apply(update_price_currency, axis=1, result_type="expand")
 
             df['price_right'] = clean_price(df['price_right'])
-            df['priceCurrency_right'] = clean_currency(df['priceCurrency_right'])
-            df[['price_right', 'priceCurrency_right']] = df[['price_right', 'priceCurrency_right']].parallel_apply(update_price_currency, axis=1, result_type="expand")
+            df[['price_right', 'priceCurrency_right']] = df[['price_right', 'priceCurrency_right']].apply(update_price_currency, axis=1, result_type="expand")
 
             df = df.fillna('')
 
@@ -169,8 +119,7 @@ if __name__ == '__main__':
             df['priceCurrency'] = df['priceCurrency'].apply(utils.clean_string_2020)
 
             df['price'] = clean_price(df['price'])
-            df['priceCurrency'] = clean_currency(df['priceCurrency'])
-            df[['price', 'priceCurrency']] = df[['price', 'priceCurrency']].parallel_apply(update_price_currency, axis=1, result_type="expand")
+            df[['price', 'priceCurrency']] = df[['price', 'priceCurrency']].apply(update_price_currency, axis=1, result_type="expand")
 
             df = df.fillna('')
 
@@ -204,12 +153,10 @@ if __name__ == '__main__':
             df['priceCurrency_right'] = df['priceCurrency_right'].apply(utils.clean_string_2020)
 
             df['price_left'] = clean_price(df['price_left'])
-            df['priceCurrency_left'] = clean_currency(df['priceCurrency_left'])
-            df[['price_left', 'priceCurrency_left']] = df[['price_left', 'priceCurrency_left']].parallel_apply(update_price_currency, axis=1, result_type="expand")
+            df[['price_left', 'priceCurrency_left']] = df[['price_left', 'priceCurrency_left']].apply(update_price_currency, axis=1, result_type="expand")
 
             df['price_right'] = clean_price(df['price_right'])
-            df['priceCurrency_right'] = clean_currency(df['priceCurrency_right'])
-            df[['price_right', 'priceCurrency_right']] = df[['price_right', 'priceCurrency_right']].parallel_apply(update_price_currency, axis=1, result_type="expand")
+            df[['price_right', 'priceCurrency_right']] = df[['price_right', 'priceCurrency_right']].apply(update_price_currency, axis=1, result_type="expand")
 
             df = df.fillna('')
 
@@ -242,8 +189,7 @@ if __name__ == '__main__':
             df['priceCurrency'] = df['priceCurrency'].apply(utils.clean_string_2020)
 
             df['price'] = clean_price(df['price'])
-            df['priceCurrency'] = clean_currency(df['priceCurrency'])
-            df[['price', 'priceCurrency']] = df[['price', 'priceCurrency']].parallel_apply(update_price_currency, axis=1, result_type="expand")
+            df[['price', 'priceCurrency']] = df[['price', 'priceCurrency']].apply(update_price_currency, axis=1, result_type="expand")
 
             df = df.fillna('')
 
@@ -277,12 +223,10 @@ if __name__ == '__main__':
             df['priceCurrency_right'] = df['priceCurrency_right'].apply(utils.clean_string_2020)
 
             df['price_left'] = clean_price(df['price_left'])
-            df['priceCurrency_left'] = clean_currency(df['priceCurrency_left'])
-            df[['price_left', 'priceCurrency_left']] = df[['price_left', 'priceCurrency_left']].parallel_apply(update_price_currency, axis=1, result_type="expand")
+            df[['price_left', 'priceCurrency_left']] = df[['price_left', 'priceCurrency_left']].apply(update_price_currency, axis=1, result_type="expand")
 
             df['price_right'] = clean_price(df['price_right'])
-            df['priceCurrency_right'] = clean_currency(df['priceCurrency_right'])
-            df[['price_right', 'priceCurrency_right']] = df[['price_right', 'priceCurrency_right']].parallel_apply(update_price_currency, axis=1, result_type="expand")
+            df[['price_right', 'priceCurrency_right']] = df[['price_right', 'priceCurrency_right']].apply(update_price_currency, axis=1, result_type="expand")
 
             df = df.fillna('')
 
@@ -315,8 +259,7 @@ if __name__ == '__main__':
             df['priceCurrency'] = df['priceCurrency'].apply(utils.clean_string_2020)
 
             df['price'] = clean_price(df['price'])
-            df['priceCurrency'] = clean_currency(df['priceCurrency'])
-            df[['price', 'priceCurrency']] = df[['price', 'priceCurrency']].parallel_apply(update_price_currency, axis=1, result_type="expand")
+            df[['price', 'priceCurrency']] = df[['price', 'priceCurrency']].apply(update_price_currency, axis=1, result_type="expand")
 
             df = df.fillna('')
 

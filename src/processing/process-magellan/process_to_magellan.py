@@ -24,7 +24,7 @@ def preprocess_magellan(file, columns_to_preprocess, experiment_name, dataset_na
     else:
         print(f'unrecognized file format: {Path(file).suffix}')
     data_df.fillna('', inplace=True)
-    if 'price' in columns_to_preprocess:
+    if 'price' in columns_to_preprocess and 'wdcproducts' not in file:
         data_df['price_left'] = data_df['price_left'].replace(r'^\s*$', np.nan, regex=True)
         data_df['price_right'] = data_df['price_right'].replace(r'^\s*$', np.nan, regex=True)
         data_df['price_left'] = data_df['price_left'].astype('float64')
