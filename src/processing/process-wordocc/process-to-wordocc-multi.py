@@ -133,9 +133,3 @@ if __name__ == '__main__':
         test ='../../../data/interim/wdc-lspc/gold-standards/preprocessed_{}_gs.pkl.gz'.format(test_cat)
 
         preprocess_wordcooc(file, columns_to_preprocess, feature_combinations, experiment_name='learning-curve', dataset_name='wdc-lspc',  valid_set=valid, test_set=test)
-
-        test = test.replace('000un','050un')
-        preprocess_wordcooc(file, columns_to_preprocess, feature_combinations, experiment_name='learning-curve', dataset_name='wdc-lspc',  valid_set=valid, test_set=test)
-
-        test = test.replace('050un','100un')
-        preprocess_wordcooc(file, columns_to_preprocess, feature_combinations, experiment_name='learning-curve', dataset_name='wdc-lspc',  valid_set=valid, test_set=test)

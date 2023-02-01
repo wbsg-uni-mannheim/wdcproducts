@@ -236,15 +236,3 @@ if __name__ == '__main__':
 
             run_wordcooc(file, valid, test, feature_combinations, classifiers, experiment_name, dataset_name='wdc-lspc',
                          write_test_set_for_inspection=True)
-
-            test = test.replace('000un_gs', '050un_gs')
-    
-            run_wordcooc(file, valid, test, feature_combinations, classifiers, experiment_name, dataset_name='wdc-lspc',
-                         write_test_set_for_inspection=True)
-            
-            test = test.replace('050un_gs', '100un_gs')
-    
-            run_wordcooc(file, valid, test, feature_combinations, classifiers, experiment_name, dataset_name='wdc-lspc',
-                         write_test_set_for_inspection=True)
-
-

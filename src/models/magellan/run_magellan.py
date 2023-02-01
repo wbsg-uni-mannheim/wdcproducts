@@ -24,7 +24,6 @@ import xgboost as xgb
 
 from joblib import dump, load
 
-from pdb import set_trace
 
 classifiers = {'NaiveBayes':  {'clf':GaussianNB(),
                             'params':{}},
@@ -115,7 +114,7 @@ def run_magellan(train_set, valid_set, test_set, feature_combinations, classifie
             S_gs.fillna('', inplace=True)
 
             ## DIRTY FIX, CLEAN UP!
-            if 'price' in A_t.columns:
+            if 'price' in A_t.columns and 'wdcproducts' not in train_set:
                 A_t["price"] = A_t["price"].replace(r'^\s*$', np.nan, regex=True)
                 A_t["price"] = A_t["price"].astype('float64')
                 A_gs["price"] = A_gs["price"].replace(r'^\s*$', np.nan, regex=True)
