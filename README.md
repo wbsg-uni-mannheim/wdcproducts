@@ -30,12 +30,10 @@ This repository contains the code and data download links to reproduce building 
 * **Experiments**
 	
 	You need to install the project as a package. To do this, activate the environment, navigate to the root folder of the project, and run ```pip install -e .```
-    
-    The code for running [Ditto](https://github.com/megagonlabs/ditto) and [HierGAT](https://github.com/CGCL-codes/HierGAT) is available in the respective repositories.
 	
     * **Preparing the data**:
 
-    To prepare the data for the experiments, run the first script below and then any of the others to prepare the data for the respective experiments. Make sure to navigate to the respective folders first.
+    To prepare the data for the experiments, run the first script below and then any of the others to prepare the data for the respective experiments. Make sure to navigate to the respective folders first. If you did not run the previous benchmark creation steps, you can obtain the needed data files on the WDC Products [page](https://webdatacommons.org/largescaleproductcorpus/wdc-products/): 
     
     - *src/processing/preprocess/preprocess_wdcproducts.py*
 
@@ -43,9 +41,19 @@ This repository contains the code and data download links to reproduce building 
     - *src/processing/process-magellan/process_to_magellan.py*
     - *src/processing/process-wordcooc/process-to-wordcooc.py*
     - *src/processing/process-wordocc/process-to-wordocc-multi.py*
+    
+    To prepare data for Ditto and HierGAT input run
+    
+    - *preprocess_data_for_ditto_hiergat.py*
 
     * **Running the experiments**:
-
+	
+		* **Ditto**:
+	    First install the Ditto environment from the *ditto/ditto_env.yml* then run *ditto/all_runs.py*
+	
+		* **HierGAT**:
+	    First install the HierGAT environment from the *hiergat/hiergat_env.yml* then run *hiergat/all_runs.py*
+	
         * **Magellan**:
             Navigate to *src/models/magellan/* and run the script *run_magellan.py*
 
@@ -54,6 +62,7 @@ This repository contains the code and data download links to reproduce building 
 
         * **Word Occurrence**:
             Navigate to *src/models/wordocc* and run the script *run_wordocc_multi.py*
+	    
 
         * **Transformer**:
 
@@ -90,6 +99,8 @@ This repository contains the code and data download links to reproduce building 
                 Analogously for fine-tuning multi-class R-SupCon: 
 
                 ```CUDA_VISIBLE_DEVICES="GPU_ID" bash lspc/run_finetune_multi.sh roberta-base True 1024 5e-05 0.07 frozen wdcproductsmulti80cc20rnd000un large```
+		
+	
 
     
     Result files can subsequently be found in the *reports* folder.
