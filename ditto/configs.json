@@ -1,0 +1,272 @@
+[
+  {
+    "name": "final_small_80cc20rnd000un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_train_small.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_valid_small.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_gs.txt"
+  },
+  {
+    "name": "final_small_80cc20rnd100un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_train_small.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_valid_small.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts80cc20rnd100un_gs.txt"
+  },
+  {
+    "name": "final_small_50cc50rnd050un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_train_small.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_valid_small.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts50cc50rnd050un_gs.txt"
+  },
+  {
+    "name": "final_small_50cc50rnd000un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_train_small.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_valid_small.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_gs.txt"
+  },
+  {
+    "name": "final_small_20cc80rnd050un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_train_small.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_valid_small.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts20cc80rnd050un_gs.txt"
+  },
+  {
+    "name": "final_small_50cc50rnd100un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_train_small.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_valid_small.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts50cc50rnd100un_gs.txt"
+  },
+  {
+    "name": "final_small_20cc80rnd100un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_train_small.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_valid_small.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts20cc80rnd100un_gs.txt"
+  },
+  {
+    "name": "final_small_20cc80rnd000un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_train_small.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_valid_small.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_gs.txt"
+  },
+  {
+    "name": "final_small_80cc20rnd050un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_train_small.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_valid_small.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts80cc20rnd050un_gs.txt"
+  },
+  {
+    "name": "final_medium_80cc20rnd000un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_train_medium.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_valid_medium.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_gs.txt"
+  },
+  {
+    "name": "final_medium_80cc20rnd100un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_train_medium.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_valid_medium.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts80cc20rnd100un_gs.txt"
+  },
+  {
+    "name": "final_medium_50cc50rnd050un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_train_medium.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_valid_medium.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts50cc50rnd050un_gs.txt"
+  },
+  {
+    "name": "final_medium_50cc50rnd000un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_train_medium.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_valid_medium.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_gs.txt"
+  },
+  {
+    "name": "final_medium_20cc80rnd050un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_train_medium.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_valid_medium.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts20cc80rnd050un_gs.txt"
+  },
+  {
+    "name": "final_medium_50cc50rnd100un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_train_medium.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_valid_medium.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts50cc50rnd100un_gs.txt"
+  },
+  {
+    "name": "final_medium_20cc80rnd100un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_train_medium.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_valid_medium.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts20cc80rnd100un_gs.txt"
+  },
+  {
+    "name": "final_medium_20cc80rnd000un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_train_medium.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_valid_medium.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_gs.txt"
+  },
+  {
+    "name": "final_medium_80cc20rnd050un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_train_medium.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_valid_medium.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts80cc20rnd050un_gs.txt"
+  },
+  {
+    "name": "final_large_80cc20rnd000un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_train_large.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_valid_large.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_gs.txt"
+  },
+  {
+    "name": "final_large_80cc20rnd100un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_train_large.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_valid_large.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts80cc20rnd100un_gs.txt"
+  },
+  {
+    "name": "final_large_50cc50rnd050un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_train_large.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_valid_large.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts50cc50rnd050un_gs.txt"
+  },
+  {
+    "name": "final_large_50cc50rnd000un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_train_large.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_valid_large.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_gs.txt"
+  },
+  {
+    "name": "final_large_20cc80rnd050un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_train_large.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_valid_large.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts20cc80rnd050un_gs.txt"
+  },
+  {
+    "name": "final_large_50cc50rnd100un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_train_large.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts50cc50rnd000un_valid_large.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts50cc50rnd100un_gs.txt"
+  },
+  {
+    "name": "final_large_20cc80rnd100un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_train_large.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_valid_large.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts20cc80rnd100un_gs.txt"
+  },
+  {
+    "name": "final_large_20cc80rnd000un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_train_large.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_valid_large.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts20cc80rnd000un_gs.txt"
+  },
+  {
+    "name": "final_large_80cc20rnd050un",
+    "category": [
+        "0",
+        "1"
+    ],
+    "trainset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_train_large.txt",
+    "validset": "data/final_output/preprocessed_wdcproducts80cc20rnd000un_valid_large.txt",
+    "testset": "data/final_output/preprocessed_wdcproducts80cc20rnd050un_gs.txt"
+  }
+]
