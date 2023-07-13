@@ -1,6 +1,6 @@
 # WDC Products: A Multi-Dimensional Entity Matching Benchmark
 
-This repository contains the code and data download links to reproduce building the WDC Products benchmark. The benchmark files are available for direct download [here](http://webdatacommons.org/largescaleproductcorpus/wdc-products/). The paper presenting the benchmark is available [here](https://arxiv.org/abs/2301.09521).
+This repository contains the code and data download links to reproduce building the WDC Products benchmark. The benchmark files are available for direct download [here](http://webdatacommons.org/largescaleproductcorpus/wdc-products/). A paper describing the benchmark will be presented at the [EDBT2024](https://dastlab.github.io/edbticdt2024/) conference. A preprint of the paper is available [here](https://arxiv.org/abs/2301.09521).
 
 * **Requirements**
 
